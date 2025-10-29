@@ -8,7 +8,8 @@ int main() {
     printf ("1 Torre:\n");
     printf ("2 Bispo:\n");
     printf ("3 Rainha:\n"); 
-    
+    printf ("4 Cavalo:\n");
+
     printf ("Digite a opção: ");  //  solicitação ao usuario1
    
     scanf ("%d", &opcao);         // digitando a opção
@@ -42,7 +43,26 @@ int main() {
     Rainha++;
     }
     break;
-               
+   case 4:                    // opção 4 movimentando o Cavalo
+    printf("Movendo o Cavalo\n");
+
+    int baixo = 2;
+    int esquerda = 1;
+
+    for (int i = 1; i <= baixo; i++) {
+        printf("Baixo\n");
+
+        if (i == baixo) {
+            int j = 1;
+            while (j <= esquerda) {
+                printf("Esquerda\n");
+                j++;
+            }
+        }
+    }
+    break;
+
+           
     default:                       // opção invalida caso alguem escolha que não conste no Menu
     printf ("opção invalida!\n");        
     break;
