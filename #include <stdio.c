@@ -1,71 +1,66 @@
 #include <stdio.h>
+ 
+  void moverTorre( int casas) {   // funções recursivas para simular o movimento Torre,
+  if (casas >0) {
+  printf ("Direito\n");
+  moverTorre(casas - 1);
+  }
+} 
+  void moverBispo( int casas) {  // funções recursivas para simular o movimento Torre,
+  if (casas >0) {
+  printf ("Cima,Esqueda\n");
+  moverBispo(casas - 1);
+  }
+}
+  void moverRainha( int casas) { // funções recursivas para simular o movimento Torre,
+  if (casas >0) {
+  printf ("Esqueda\n");
+  moverRainha(casas - 1);
+  }
+}
+void moverCavalo(int movimentos) {  // oops aninhados com múltiplas variáveis
 
-int main() {
+for (int cima = 0; cima < 2; cima++) {   // duas casas para cima
+   printf("  Cima\n", cima + 1);
+}
+for (int direita = 0; direita < 1; direita++) {   // uma casa para direita
+   printf("  Direita\n", direita + 1);
+}
+ }
+  int main () {
+  
+  int opcao = 0;
 
-    int opcao = 0;  // variável
+  printf ("###### Jogo de Xadrez ######\n"); // Menu para seleção de peças
+  printf ("1 Torre:\n");
+  printf ("2 Bispo:\n");
+  printf ("3 Rainha:\n"); 
+  printf ("4 Cavalo:\n");
 
-    printf ("###### Jogo de Xadrez ######\n"); // Menu para seleção de peças
-    printf ("1 Torre:\n");
-    printf ("2 Bispo:\n");
-    printf ("3 Rainha:\n"); 
-    printf ("4 Cavalo:\n");
-
-    printf ("Digite a opção: ");  //  solicitação ao usuario1
+  printf ("Digite a opção: ");  //  solicitação ao usuario1
    
-    scanf ("%d", &opcao);         // digitando a opção
-    printf("\n");
+  scanf ("%d", &opcao);         // digitando a opção
+  printf("\n");
 
-   
-    switch (opcao) 
-    {
-        case 1:                    // opção 1 movimentando a torre
-    printf("Movendo a Torre\n");
-    for (int Torre = 1; Torre <= 2; Torre++) {
-        printf("Baixo\n");
-    }
-    printf("Esquerda\n");
+
+  switch (opcao)
+  {
+  case 1:
+  moverTorre(5);
     break;
-    case 2:                       // opção 2 movimentando o bispo
-            
-    printf ("Movendo o Bispo\n"); 
-    int Bispo = 1;
-    do {
-    printf ("Cima, Esqueda\n");
-    Bispo++;
-    } while (Bispo <= 5);
+  case 2:
+  moverBispo(5);
     break;
-    case 3:                    // opção 3 movimentando o Rainha
-           
-    printf ("Movendo a Rainha\n"); 
-    int Rainha = 1;
-    while (Rainha <= 8) {
-    printf ("Esqueda\n");
-    Rainha++;
-    }
+  case 3:
+  moverRainha(8);
     break;
-   case 4:                    // opção 4 movimentando o Cavalo
-    printf("Movendo o Cavalo\n");
-
-    int baixo = 2;
-    int esquerda = 1;
-
-    for (int i = 1; i <= baixo; i++) {
-        printf("Baixo\n");
-
-        if (i == baixo) {
-            int j = 1;
-            while (j <= esquerda) {
-                printf("Esquerda\n");
-                j++;
-            }
-        }
-    }
+  case 4:
+  moverCavalo(1);
     break;
 
-           
-    default:                       // opção invalida caso alguem escolha que não conste no Menu
-    printf ("opção invalida!\n");        
+  default:
     break;
-    }
-    return 0;
+  }
+
+  return 0;
 }
